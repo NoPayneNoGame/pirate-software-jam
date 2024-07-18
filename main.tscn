@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://mqdu6g03wv2g"]
+
+[ext_resource type="PackedScene" uid="uid://c3v12lvjjrnfq" path="res://player.tscn" id="1_0jc5a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0quay"]
+size = Vector2(1162, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wusyk"]
+size = Vector2(261, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6oww7"]
+size = Vector2(76, 405)
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_0jc5a")]
+position = Vector2(582, 535)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(567, 630)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("RectangleShape2D_0quay")
+metadata/_edit_lock_ = true
+
+[node name="Floor2" type="StaticBody2D" parent="."]
+position = Vector2(227, 404)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
+shape = SubResource("RectangleShape2D_wusyk")
+metadata/_edit_lock_ = true
+
+[node name="Wall" type="StaticBody2D" parent="."]
+position = Vector2(65, 418)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+shape = SubResource("RectangleShape2D_6oww7")
+metadata/_edit_lock_ = true

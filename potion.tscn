@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmge14hu66jlm"]
+
+[ext_resource type="Script" path="res://potion.gd" id="1_aenkh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7l48y"]
+
+[node name="Potion" type="Area2D"]
+script = ExtResource("1_aenkh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_7l48y")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(0, -3)
+polygon = PackedVector2Array(-8, 6, -5, 9, 5, 9, 8, 6, 9, 1, 4, -3, 3, -9, 5, -12, 4, -14, -4, -14, -5, -12, -3, -9, -4, -3, -9, 1)
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
